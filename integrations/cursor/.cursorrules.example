@@ -1,0 +1,41 @@
+# Cursor rules for this Second Brain vault.
+# Copy to vault root as `.cursorrules`.
+
+## What this vault is
+A personal knowledge vault — markdown files organized by semantic folder
+(daily/, weekly/, projects/, references/, inbox/, research-skill-graph/).
+Every file has YAML frontmatter with a `type:` field.
+
+## Editing rules
+
+- Match section structure and tone of existing files in the same folder
+- Never reorder or remove frontmatter keys
+- Use `_templates/*.md` when creating new files
+- Filenames: kebab-case, meaningful slug
+- Dated updates in project files go AT THE END (most recent last)
+
+## Dates
+
+Convert relative dates ("last Tuesday", "next week") to absolute YYYY-MM-DD
+before writing them into files.
+
+## Git
+
+This vault is a git repo. Suggest commits with terse content-describing
+messages (not "update file"). Never push without explicit approval.
+
+## Braindump pattern
+
+When I ask you to log work to my second brain:
+1. Identify which `projects/*.md` file the work belongs to (ask if unclear)
+2. Read that file to learn its house style
+3. Add a new `## Section (YYYY-MM-DD)` block BEFORE `## Lessons Learned`
+4. Use bullet points with `**bold**` key terms
+5. Keep it terse — bullets not paragraphs
+
+## What to avoid
+
+- Don't delete content during "cleanup" without showing exactly what you'd
+  delete first
+- Don't paraphrase existing content — summarize only at section boundaries
+- Don't generate content-free preambles ("I'll update the file now") — just do it

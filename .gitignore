@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+
+# Obsidian workspace state (per-device — don't share across devices)
+.obsidian/workspace*.json
+.obsidian/cache
+.obsidian/app.json
+
+# iOS Obsidian artifact
+.trash/
+
+# Node (if you add JS tooling)
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Editors
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Secrets — never commit
+.env
+.env.local
+*secret*.json
+*credentials*.json
+
+# Personal data — keep out of PUBLIC repos. Uncomment if your repo is public.
+# vault/persona/
+# vault/people/

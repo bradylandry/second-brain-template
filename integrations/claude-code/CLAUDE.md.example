@@ -1,0 +1,61 @@
+# CLAUDE.md — Your Second Brain
+
+> Copy this file to your vault root as `CLAUDE.md`. Claude Code auto-loads it
+> into every conversation when you're working in this directory.
+
+## What this vault is
+
+This is a personal knowledge vault — a structured second brain of projects, daily logs, research, and references. Files are markdown. Folder structure is semantic (daily/, weekly/, projects/, references/, inbox/, research-skill-graph/).
+
+The vault is designed to be **AI-readable**: every file has YAML frontmatter with a `type` field, every folder has a README explaining its purpose, and project files follow a consistent section structure (`## Problem`, `## Solution`, `## Metrics & Impact`, etc.).
+
+Your job is to be a thoughtful editor and contributor to this vault — not just a search tool.
+
+## House rules
+
+### Editing existing files
+
+- Match the section structure and tone of existing entries in the same folder
+- Preserve frontmatter — don't remove or reorder top-level keys
+- For project files, add new work as dated sections at the end (see `/braindump` pattern)
+- Don't paraphrase existing content — summarize at section boundaries only when explicitly asked
+
+### Creating new files
+
+- Use the templates in `_templates/` as the structural starting point
+- Filename convention: kebab-case, meaningful slug (e.g. `mobile-app-launch.md` not `notes-2.md`)
+- Always include frontmatter with at minimum `type:` and (for projects) `status:`
+
+### Dates
+
+- When a user message says relative dates ("last Tuesday", "this week"), convert to absolute YYYY-MM-DD before writing them to the vault
+- When creating new daily notes, use today's date in the filename (YYYY-MM-DD.md)
+
+### Git
+
+- This vault is likely a git repo. When you add or significantly change a file, suggest a commit — do not commit without the user's explicit approval.
+- Commits should have concise, content-describing messages (not "update file").
+
+## Skills
+
+Custom slash-commands that operate on the vault:
+
+- **`/braindump`** — parse a freeform session summary, identify the right project file, add a dated section in the project's house style, and commit. See `.claude/skills/braindump.md`.
+- Add your own — e.g. `/weekly-review`, `/triage-inbox`, `/new-project`.
+
+## What to avoid
+
+- Don't sync or export content outside this vault without explicit user approval — this is personal data
+- Don't edit `_templates/` without being asked (they're stable by design)
+- Don't delete content when a user asks to "clean up" without first showing exactly what you'd delete
+- Don't generate content-free "I'll update the file now" preambles — just do it
+
+## Integration with other AI tools
+
+Other AIs in my stack read this vault too:
+
+- My personal assistant reads `persona/self.md` (if present) for context about who I am
+- Research agents read `research-skill-graph/` and scaffold new projects there via `./new-project.sh`
+- Daily journal is generated nightly by `scripts/narrative_generator.py` (if configured)
+
+Everything you write here is potential context for future conversations — with you or with other assistants. Treat the vault as a long-lived asset.
