@@ -4,6 +4,68 @@ The template's `_templates/` files use Obsidian's Templater plugin (`<% tp.date.
 
 There's a better way.
 
+## Setting up iCloud sync between iPhone and Mac (Apple users)
+
+**Install Obsidian on the iPhone first**, not the Mac. Counterintuitive, but it's the path of least resistance — iOS Obsidian has a "Store in iCloud" toggle that creates the right container path; Mac Obsidian doesn't, so going Mac-first means manually creating folders in the iCloud Drive container.
+
+### iPhone-first flow (recommended)
+
+1. **Install Obsidian** from the App Store on your iPhone.
+2. Open Obsidian → **Create new vault**:
+   - **Vault name:** match what you'll use on Mac (e.g. `my-vault`).
+   - Toggle **"Store in iCloud"** ON. This is the critical step.
+3. iOS creates the vault at `iCloud Drive → Obsidian → my-vault`. iCloud syncs the empty folder up.
+4. **On Mac**, install Obsidian (desktop). When it opens:
+   - Click **"Open"** (not "Create new").
+   - Navigate to `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/my-vault` — that's where iOS Obsidian put your iCloud vault.
+   - Open it. Mac Obsidian now opens the same vault that's syncing to your phone.
+5. **Drop the template contents into the iCloud-synced vault.** Two ways:
+
+   **Best for new users** — when you run `setup.sh`, point it at the iCloud path:
+
+   ```bash
+   ./setup.sh "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/my-vault"
+   ```
+
+   `setup.sh` will populate the iCloud-synced folder with the template structure, and iCloud will push it to your phone within seconds.
+
+   **If you already ran `setup.sh ~/my-vault`** — move the contents into the iCloud folder:
+
+   ```bash
+   mv ~/my-vault/* ~/my-vault/.* "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/my-vault/" 2>/dev/null
+   rmdir ~/my-vault
+   ```
+
+### Mac-first flow (also works, slightly more work)
+
+1. Install Obsidian on Mac. Don't open it yet.
+2. Create the iCloud Obsidian container manually (it doesn't exist until something writes there):
+
+   ```bash
+   mkdir -p "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/my-vault"
+   ```
+
+3. Run `./setup.sh "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/my-vault"` to populate it.
+4. Open Obsidian on Mac → **"Open"** → navigate to the iCloud path → open the vault.
+5. Wait 30-60 seconds for iCloud to push the folder up.
+6. Install Obsidian on iPhone → it should detect the existing iCloud vault automatically and offer to open it.
+
+### Critical caveats
+
+- **iCloud sync is not git.** It's eventual-consistency file sync. If you edit the same file on both devices simultaneously, you'll get a conflict copy. For a personal vault used by one person across two devices, that's almost never an issue. For collaborative or high-write workloads, prefer git sync (see below).
+- **The `.git` directory syncs over iCloud too.** This is fine but slow on first sync. If you don't want git pushing/pulling from your phone, do `.gitignore` style filtering or just don't commit from phone.
+- **Don't put your vault in `iCloud Drive → Documents`** (the generic Documents folder). The Obsidian-specific path (`iCloud~md~obsidian/Documents/`) is what iOS Obsidian indexes — putting the vault elsewhere in iCloud means Obsidian on iPhone can't find it without manual import.
+
+### Git sync as an alternative or addition
+
+For a vault you're already pushing to GitHub (like the one `setup.sh` creates), you have a choice:
+
+- **Use iCloud only** — simplest. Vault lives in the iCloud Obsidian container; iCloud syncs Mac ↔ iPhone. Push to git from your Mac when you want a backup or to share with another machine.
+- **Use git only** — install [Working Copy](https://workingcopyapp.com/) on iPhone (~$20). Clone your vault repo into Working Copy → open from Obsidian iOS via Files app integration. No iCloud involvement. Better conflict handling, but more friction (manual pull/push on phone).
+- **Use both** — iCloud for fast realtime sync, git for backup + history. Most reliable but the double-tracking can produce confusing situations.
+
+For a personal one-person vault, **iCloud-only is usually right** until you hit a sync issue. Then add git.
+
 ## Use the core Daily Notes plugin for daily entries (recommended)
 
 Obsidian ships with a core plugin called **Daily Notes** (Settings → Core plugins → Daily notes). It's simpler than Templater and works great on mobile:
