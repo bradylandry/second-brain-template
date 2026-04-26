@@ -1,21 +1,17 @@
 ---
 type: daily
-date: <% tp.date.now("YYYY-MM-DD") %>
+date: {{date:YYYY-MM-DD}}
 tags: [daily]
 ---
 
-# <% tp.date.now("YYYY-MM-DD") %>
+# {{date:YYYY-MM-DD}}
 
 ## Ideas
 
 - 
-- 
-- 
 
 ## Tasks
 
-- [ ] 
-- [ ] 
 - [ ] 
 
 ## Notes
