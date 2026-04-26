@@ -25,6 +25,15 @@ Open these files and replace the placeholder prompts with your actual answers:
 
 **This is the highest-ROI 10 minutes you can spend.** A vault without populated persona files gives the AI nothing to ground on — you'll get generic advice every time. A vault with well-written persona files produces surprisingly specific, relevant help on the first try.
 
+### Don't want to fill four empty files by hand?
+
+You don't have to. Two ways to get an AI to interview you and write the files for you:
+
+- **Claude Code users**: run the `/onboard-vault` skill from `integrations/claude-code/skills/onboard-vault.md`. It does the interview and writes the files into your vault directly.
+- **Anyone else (ChatGPT, Gemini, Claude.ai web)**: paste the prompt from [`docs/onboarding-prompt.md`](onboarding-prompt.md) into a fresh chat. It interviews you, outputs each file as markdown, and you copy-paste into your vault.
+
+Either path takes ~15-25 minutes if you do persona + projects in one session. You can stop and resume any time.
+
 Rules of thumb:
 - Be honest, not aspirational (an AI advising "you" needs to see real you)
 - Be specific, not generic ("I run a 21-strategy quant system" > "I do trading")
