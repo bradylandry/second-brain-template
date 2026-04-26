@@ -1,8 +1,11 @@
 # Onboarding Prompt
 
-Use this prompt with any LLM (Claude, ChatGPT, Gemini) to fill out your fresh vault. It interviews you, then outputs the markdown for `vault/persona/*.md` and `vault/projects/*.md`. **You paste the resulting files into your vault yourself.**
+Use this prompt with any LLM to interview you and produce the markdown for `vault/persona/*.md` and `vault/projects/*.md`.
 
-If you're using Claude Code, prefer the `/onboard-vault` skill — it does the same thing and writes the files directly.
+**Two ways to use it, depending on what your LLM can do:**
+
+- **If your LLM has file-edit tools** (Claude Code, Cursor, Aider, Cline, any local agent with filesystem access): the LLM writes the files into your vault directly. **No copy-paste required.** Just paste this prompt as the system message and tell it where your vault is — it'll edit the files in place. Claude Code users should prefer the dedicated [`/onboard-vault` skill](../integrations/claude-code/skills/onboard-vault.md), which is this same prompt with Claude-Code-specific guidance.
+- **If your LLM is text-only** (ChatGPT web, Gemini web, Claude.ai web without code tools): the LLM outputs each file as a markdown code block. **You copy-paste each block into the matching path in your vault by hand.** This works fine; it's just one extra step per file.
 
 ## How to use
 

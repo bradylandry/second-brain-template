@@ -42,10 +42,17 @@ Open these files and replace the placeholder prompts with your actual answers:
 
 ### Don't want to fill four empty files by hand?
 
-You don't have to. Two ways to get an AI to interview you and write the files for you:
+You don't have to. Two ways to get an AI to interview you and write the persona files (and project files) for you:
 
-- **Claude Code users**: run the `/onboard-vault` skill from `integrations/claude-code/skills/onboard-vault.md`. It does the interview and writes the files into your vault directly.
-- **Anyone else (ChatGPT, Gemini, Claude.ai web)**: paste the prompt from [`docs/onboarding-prompt.md`](onboarding-prompt.md) into a fresh chat. It interviews you, outputs each file as markdown, and you copy-paste into your vault.
+**Path A — Claude Code (or any agent with file-write tools): zero copy-paste.**
+
+Open Claude Code in your vault directory and invoke the `/onboard-vault` skill (defined in `integrations/claude-code/skills/onboard-vault.md`). Claude interviews you and writes each file directly to the right path in your vault. You answer questions; Claude does the file editing. This is the cleanest experience.
+
+The same pattern works in any agent with file-edit tool access (Cursor, Aider, Cline, etc.) — you can paste the prompt from `docs/onboarding-prompt.md` and the agent will write files directly instead of just outputting text.
+
+**Path B — Web LLMs (ChatGPT, Gemini, Claude.ai web): copy-paste flow.**
+
+If you're using a web LLM that can only output text (not edit files), paste the prompt from [`docs/onboarding-prompt.md`](onboarding-prompt.md) into a fresh chat. The LLM interviews you and outputs each file as markdown in a code block. You copy-paste each block into the matching path in your vault.
 
 Either path takes ~15-25 minutes if you do persona + projects in one session. You can stop and resume any time.
 
