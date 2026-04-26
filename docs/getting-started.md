@@ -14,6 +14,21 @@ Choose your AI integration when prompted. If unsure, pick Claude Code — it has
 
 You now have `~/my-vault/` containing everything you need.
 
+### Important: the template ≠ your vault
+
+The cloned `second-brain-template/` directory is a **one-time installer**. `setup.sh` did three things:
+
+1. Copied the vault skeleton (folders + templates + persona stubs + README files) to `~/my-vault/`
+2. Wired the AI integration files you picked (e.g. `CLAUDE.md`)
+3. **Initialized a fresh git repo at `~/my-vault/`** — completely separate from the template's git history
+
+**Your vault is `~/my-vault/`** (or whatever destination path you chose). That's the directory you work in from now on. You can:
+
+- **Delete the cloned `second-brain-template/` directory** — its job is done.
+- **Or keep it** as a reference for re-running setup or pulling future template updates manually. But don't work inside it — your personal content would mix with template files, and `git pull` from the template would conflict with your edits.
+
+The rest of this guide refers to `~/my-vault/` paths. Run all commands from inside `~/my-vault/`, not inside the cloned template.
+
 ## Step 2 — Fill in your persona (10 minutes — DO NOT SKIP)
 
 Open these files and replace the placeholder prompts with your actual answers:

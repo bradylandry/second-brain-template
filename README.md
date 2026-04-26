@@ -24,7 +24,7 @@ This vault is the answer to that problem. Not a note-taking system. A **long-liv
 ## Quickstart
 
 ```bash
-git clone git@github.com:<YOU>/second-brain-template.git
+git clone git@github.com:bradylandry/second-brain-template.git
 cd second-brain-template
 ./setup.sh ~/my-vault        # prompts for AI integration choice
 cd ~/my-vault
@@ -36,6 +36,8 @@ That's it. You now have:
 - AI integration wired up (CLAUDE.md, .cursorrules, or equivalent based on your pick)
 - A git repo with an initial commit — ready to push to your own private remote
 - A scaffolding script to start research projects: `cd research-skill-graph && ./new-project.sh <slug>`
+
+> **The template ≠ your vault.** The cloned `second-brain-template/` directory is a one-time installer — `setup.sh` copies the vault skeleton to `~/my-vault/` and initializes a fresh git repo there with no connection to this template's remote. **Your vault is `~/my-vault/`** (or whatever path you chose) — that's where you do all your work. After setup, you can delete the cloned `second-brain-template/` directory, or keep it around as a reference for running `setup.sh` again or pulling future template updates manually. **Do not work inside the cloned template directory** — your personal content would mix with template files and `git pull` would conflict with your edits.
 
 ## Philosophy
 
