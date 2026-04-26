@@ -50,6 +50,38 @@ There's a better way.
 5. Wait 30-60 seconds for iCloud to push the folder up.
 6. Install Obsidian on iPhone → it should detect the existing iCloud vault automatically and offer to open it.
 
+### "I already created a vault outside iCloud — do I need to start over?"
+
+No. Don't uninstall Obsidian. Just move the vault folder into the iCloud Obsidian container — your existing notes come along for the ride.
+
+```bash
+# Replace `my-vault` with your actual vault name + adjust the source path
+SOURCE="$HOME/my-vault"   # or wherever your existing vault is
+DEST="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/my-vault"
+
+mkdir -p "$DEST"
+mv "$SOURCE"/* "$SOURCE"/.* "$DEST/" 2>/dev/null
+rmdir "$SOURCE"
+```
+
+The `$SOURCE/.*` glob captures dotfiles — `.git`, `.obsidian`, `.gitignore` — which you definitely want to keep. The `2>/dev/null` suppresses the harmless warning about `.` and `..` not being movable.
+
+Then in Obsidian on your Mac:
+
+1. **File → Open vault** (or close the current vault and pick a new one)
+2. Navigate to the iCloud path (`~/Library/Mobile Documents/iCloud~md~obsidian/Documents/my-vault`)
+3. Open it. Obsidian indexes it as a fresh open; nothing else changes.
+4. (Optional) Right-click the old vault location in Obsidian's vault switcher → **Remove from list**. This only removes the bookmark; the empty folder is already gone from `rmdir`.
+
+**Common gotchas after the move:**
+
+- **Symlinks break.** If you had any `ln -s` links into the vault from elsewhere, they now point at empty dirs. Re-create them at the new path.
+- **Templater scripts with hardcoded paths break.** If any custom Templater code references `~/my-vault/...` as a string, update it to the new iCloud path.
+- **Cron jobs break.** If `weekly_rollup.py` (or similar) references the old `OBSIDIAN_VAULT_DIR`, update the env var or the script's default.
+- **First sync is slow.** iCloud has to upload the full vault. Expect 5-30 minutes for a vault with images/PDFs; pure-text vaults sync in seconds.
+
+After the move, install Obsidian on your iPhone → it'll detect the existing iCloud vault automatically and offer to open it. No manual import.
+
 ### Critical caveats
 
 - **iCloud sync is not git.** It's eventual-consistency file sync. If you edit the same file on both devices simultaneously, you'll get a conflict copy. For a personal vault used by one person across two devices, that's almost never an issue. For collaborative or high-write workloads, prefer git sync (see below).
