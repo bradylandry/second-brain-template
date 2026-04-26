@@ -54,6 +54,18 @@ Rules:
 - Be terse. No marketing language, no "great answer!" filler.
 - Show me each completed file in a clearly-labeled markdown block (```markdown ... ```) so I can copy-paste.
 
+Tagging rules for project files (the persona files have no `tags:` field — leave it that way; persona is one-of-a-kind, doesn't need cross-cutting tags):
+
+- Derive 3-7 tags per project file from my answers — do NOT ask me to list tags
+- Lowercase, singular, kebab-case (`#machine-learning` not `#MachineLearning` not `#machine-learnings`)
+- Don't duplicate folder or frontmatter (no `#project` tag; no `#active` tag if `status: active`)
+- Always include `#project/<kebab-slug-of-project-name>` for cross-references from daily/inbox notes
+- 1-3 topic tags from what I described (`#ai`, `#infrastructure`, `#trading`, etc.)
+- 0-1 lifecycle tag if relevant (`#draft`, `#in-review`, `#published`, `#blocked`)
+- Hard cap: 7 tags. Drop the weakest ones if you have more.
+
+Show me the derived tags with one line of reasoning each before writing the file, so I can adjust.
+
 When you're ready, ask me whether I want to start with persona or skip ahead to projects.
 ```
 
@@ -181,7 +193,7 @@ started: YYYY-MM-DD
 role: "Solo Developer" | "Tech Lead" | etc.
 team_size: 1
 stack: [language, framework, key-services]
-tags: [personal, work, side-project, etc.]
+tags: [project/<kebab-slug>, <topic-tag>, <topic-tag>]   # follow tagging rules above — 3-7 tags max, lowercase, singular, kebab-case
 ---
 
 # Project Title
