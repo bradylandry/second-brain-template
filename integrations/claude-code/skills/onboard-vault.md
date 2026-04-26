@@ -74,6 +74,17 @@ Write each as `vault/projects/<kebab-case-name>.md` using the template shape fro
 
 **For each project, ask at the end:** "What's the next thing you'd want to write in this file in 2 weeks?" — this primes the user to come back and update, instead of treating the file as done-forever.
 
+**Tags** — read `docs/tagging.md` first if you haven't. For each project, derive 3-7 tags from the user's answers using these rules (do NOT make the user list tags by hand):
+
+- Lowercase, singular, kebab-case (`#machine-learning` not `#MachineLearning` or `#machine-learnings`)
+- Skip anything that duplicates the folder or frontmatter (don't tag `#project` — it's already in `projects/`; don't tag the same value as the `status:` frontmatter)
+- Always include `#project/<kebab-slug-of-project-name>` so daily notes / inbox items can later cross-reference this project
+- Pick 1-3 topic tags from what the user described — e.g. `#ai`, `#infrastructure`, `#trading`, `#health`, `#writing`
+- Pick 0-1 lifecycle tag if relevant — e.g. `#draft`, `#in-review`, `#published`, `#blocked`
+- Hard cap: 7 tags. If you have more, drop the weakest ones.
+
+Show the derived tags to the user with one line of reasoning each ("`#ai` — you mentioned LLM orchestration; `#project/quant-system` — auto-generated cross-reference") and let them adjust before writing.
+
 ### 4. People (optional, skip by default)
 
 `vault/people/` is for tracking key collaborators (manager, mentors, frequent partners). Don't push the user to fill this unless they ask — most people find it useful to add as they go, not in a batch.
