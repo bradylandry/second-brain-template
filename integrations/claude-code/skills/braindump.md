@@ -65,6 +65,7 @@ git commit -m "<project>: <one-line summary>"
 - **Don't modify** the Problem, Solution, Metrics, or Technical Highlights sections unless the user explicitly asks
 - **Use `**bold**`** for key terms in bullet points
 - **Always read the file first** — no updates without reading current state
+- **Insert `[[wikilinks]]` for cross-references** — when a bullet ties to a stated value link `[[../persona/values]]`; when it references another project link `[[../projects/<slug>]]`; when it references a tracked person link `[[../people/<slug>]]`. **Only link to files that already exist in the vault** — check `vault/persona/`, `vault/projects/`, and `vault/people/` first. Use relative paths. Never create dangling references. Cap: ~3 wikilinks per dated section; drop the weakest.
 
 ## Example
 

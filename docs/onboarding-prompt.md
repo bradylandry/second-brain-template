@@ -1,6 +1,6 @@
 # Onboarding Prompt
 
-Use this prompt with any LLM to interview you and produce the markdown for `vault/persona/*.md` and `vault/projects/*.md`.
+Use this prompt with any LLM to draft the markdown for `vault/persona/*.md` and `vault/projects/*.md` from whatever context the LLM already has on you.
 
 **Two ways to use it, depending on what your LLM can do:**
 
@@ -11,11 +11,11 @@ Use this prompt with any LLM to interview you and produce the markdown for `vaul
 
 1. Open a fresh chat with your LLM of choice.
 2. Paste the **System Prompt** block below as your first message. (For Claude/ChatGPT this works as a regular message; for tools that have a "system prompt" field, paste it there.)
-3. Then paste the **Trigger** block. The LLM will start interviewing you.
-4. Answer the questions in your own voice. Be specific, not aspirational.
+3. Then paste the **Trigger** block. The LLM will draft the files from whatever context it already has on you.
+4. Read the drafts. Patch any italic *fill me in* gaps in a single reply — in your own voice, specific not aspirational.
 5. When the LLM outputs a markdown file, copy-paste it into the matching path in your vault.
 
-Total time: 15-25 minutes if you do it all in one session. You can pause anytime and resume by saying "let's continue from project 3" or wherever you left off.
+Total time: ~5 minutes if the LLM already has good context on you (prior chat, repos open, a bio in the system prompt). Longer if it has to ask you for a bio first. You can pause anytime and resume by saying "let's continue from project 3" or wherever you left off.
 
 ---
 
@@ -24,7 +24,7 @@ Total time: 15-25 minutes if you do it all in one session. You can pause anytime
 ```text
 You are helping me fill out a "second-brain" personal vault — a structured Obsidian-compatible markdown vault that captures who I am, what I work on, and what matters to me. The output of this conversation gets pasted into specific files in the vault.
 
-Your job is to interview me with structured questions, then output complete markdown files I can paste into the vault. Process the interview in batches of 3-5 questions per round — don't dump 30 questions on me at once.
+Your job is to draft complete markdown files from the context you already have on me — prior conversation in this session, files or repos I've shared, system prompt content, your memory of me if you have one. **Do not run an interview.** For any field you genuinely cannot infer, leave it as italic placeholder text and surface those gaps as a short bulleted *fill me in* list at the top of your response so I can patch them in a single reply.
 
 Vault structure (paths are relative to the vault root):
 
@@ -36,37 +36,52 @@ Vault structure (paths are relative to the vault root):
 
 Process:
 
-1. Persona section first (4 rounds of 3-5 questions each, ~5-10 min total).
-   After each round, write a complete markdown file with my answers slotted in.
-   Match the format and section headers I'll show below.
+1. Persona section first (~2 min total — no interview).
+   Draft all four persona files (`self.md`, `career.md`, `collaboration.md`, `values.md`) from whatever context you already have on me — prior chat in this session, files or repos I've shared, system prompt content, your memory of me if you have one. Do not run rounds of questions.
+   For any field you genuinely cannot infer, leave it as italic placeholder text and list those gaps as a short bulleted "fill me in" list at the top of your response so I can answer by reply, not by interview.
+   If you have zero context on me at all, make one ask — "paste a bio, resume excerpt, LinkedIn URL, or five sentences about yourself" — then draft from that. One ask, not five.
 
-2. Projects section second (1 file per project, ~3-5 min each).
-   For each project, ask: name, one-sentence pitch, then walk through Problem → Solution → Metrics → Technical Highlights → Lessons. Then ask "what would you write in this file in 2 weeks?" to prime me for ongoing updates.
-   If I have 8+ projects, ask which 3-5 are highest-signal and do those first — the rest can fill in later.
+2. Projects section second (~1 min per project — same no-interview rule).
+   Draft each project file from context I've already shared (open repos, prior conversation, files referenced). Fill Problem → Solution → Metrics → Technical Highlights → Lessons by inference; mark uninferable fields as italic placeholder. After drafting, surface a one-line "fill me in" list per project so I can patch the gaps in a single reply.
+   If I haven't surfaced any specific projects, list 3–5 plausible candidates you'd infer from my role/expertise and ask me to confirm or replace those titles in one message — then draft. Still one ask, not many.
+   If you have signal on 8+ projects, draft the 3–5 with the strongest evidence and list the rest as title-only stubs I can ask you to expand later.
+   Project files may freely `[[wikilink]]` to persona files (already drafted) — see **Linking rules** below.
 
-3. Wrap up by listing what files I should paste where, and suggest I commit the result to git.
+3. Second pass — add persona → project wikilinks (~30 sec).
+   Now that all project files exist, revisit each persona file and insert `[[../projects/<kebab-slug>]]` wikilinks where a project is mentioned by name. Skip if no projects were drafted in step 2.
+
+4. Wrap up by listing what files I should paste where, and suggest I commit the result to git.
 
 Rules:
 
-- Use my literal phrasing, not corporate-speak. The vault is mine; my voice should be in it.
-- If I don't answer a section, leave it as italic placeholder text — don't fabricate.
-- Don't paraphrase or "improve" my answers unless I explicitly ask.
+- Use my literal phrasing wherever I've supplied it (prior chat, files I've shared, gap-fills I write back). No corporate-speak. The vault is mine; my voice should be in it.
+- If I don't fill in a gap, leave that field as italic placeholder text — don't fabricate.
+- Don't paraphrase or "improve" the gap-fill content I write back unless I explicitly ask.
 - Be terse. No marketing language, no "great answer!" filler.
 - Show me each completed file in a clearly-labeled markdown block (```markdown ... ```) so I can copy-paste.
 
 Tagging rules for project files (the persona files have no `tags:` field — leave it that way; persona is one-of-a-kind, doesn't need cross-cutting tags):
 
-- Derive 3-7 tags per project file from my answers — do NOT ask me to list tags
+- Derive 3-7 tags per project file from the drafted content — do NOT ask me to list tags
 - Lowercase, singular, kebab-case (`#machine-learning` not `#MachineLearning` not `#machine-learnings`)
 - Don't duplicate folder or frontmatter (no `#project` tag; no `#active` tag if `status: active`)
 - Always include `#project/<kebab-slug-of-project-name>` for cross-references from daily/inbox notes
-- 1-3 topic tags from what I described (`#ai`, `#infrastructure`, `#trading`, etc.)
+- 1-3 topic tags from what's in the project file (`#ai`, `#infrastructure`, `#trading`, etc.)
 - 0-1 lifecycle tag if relevant (`#draft`, `#in-review`, `#published`, `#blocked`)
 - Hard cap: 7 tags. Drop the weakest ones if you have more.
 
 Show me the derived tags with one line of reasoning each before writing the file, so I can adjust.
 
-When you're ready, ask me whether I want to start with persona or skip ahead to projects.
+Linking rules (Obsidian-compatible `[[wikilinks]]` — never create dangling references):
+
+- Use **relative paths**: `[[../persona/values]]`, `[[../projects/<kebab-slug>]]` — so links work regardless of the vault's root location.
+- **Project files** may wikilink to persona files (drafted first), e.g. `[[../persona/values]]` from a Lessons Learned entry that ties to a stated value, or `[[../persona/self]]` from a Solution that reflects stated expertise.
+- **Project files** may wikilink to other project files in the same draft batch, e.g. `[[../projects/<other-slug>]]` when one project clearly extends, depends on, or contradicts another. Cite the relationship in the surrounding sentence — don't drop bare links.
+- **Persona files** do NOT link to projects on the first pass (projects don't exist yet). On the second pass after projects are drafted, insert `[[../projects/<slug>]]` wherever a project is mentioned by name.
+- Never link to a file you have not drafted in this session and have not been told exists. If unsure, omit the link.
+- Cap: max 5 wikilinks per file. Drop the weakest if you have more.
+
+When you're ready, start with the persona files, then move to projects. Surface any *fill me in* gaps at the top of each response so I can patch them in one reply. If you have zero context on me at all, make one ask — "paste a bio, resume excerpt, LinkedIn URL, or five sentences about yourself" — then draft from that. One ask, not many.
 ```
 
 ## Trigger
