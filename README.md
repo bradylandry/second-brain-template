@@ -17,6 +17,7 @@ This vault is the answer to that problem. Not a note-taking system. A **long-liv
 - **Semantic folder structure** — `daily/`, `weekly/`, `projects/`, `references/`, `inbox/`, `journal/`, `research-skill-graph/`. Every folder has a README explaining its role. Every file has YAML frontmatter with a `type:` field so AIs can filter.
 - **6-lens research system** — a complete methodology (in `research-skill-graph/`) for deep research on a single question. Run `./new-project.sh <slug>` to scaffold a new research project, then point your AI agent at it to execute the 6 lenses and produce structured outputs.
 - **`/braindump` workflow** — the core AI ritual. After a coding session or work block, type `/braindump` in your AI tool; it finds the right project file, adds a dated section in the file's existing style, and commits. Your project files self-maintain.
+- **Thinking tools (`/challenge`, `/emerge`)** — once you have content in the vault, these read it back. `/challenge` pressure-tests a current decision against your stated values and recent project entries with verbatim citations. `/emerge` surfaces 3-5 unnamed recurring patterns across your project files so you can decide which deserve to be formalized in `persona/`. Both are read-only.
 - **AI-agnostic integrations** — works with [Claude Code](integrations/claude-code/), [Cursor](integrations/cursor/), [Continue.dev](integrations/continue-dev/), [OpenCode](integrations/opencode/), or [any AI assistant](integrations/generic/). Pick yours during setup.
 - **Daily narrative generator** — reference script that reads your day's git commits, calendar, and chat history, produces a dated journal entry via LLM. Dogfoodable — ships with the template.
 - **One live example** — a complete 6-lens research project (`example-act-prep-market`) shows what populated output looks like.
@@ -59,7 +60,7 @@ MIT licensed. Plain markdown. No proprietary format. Move to any editor, any AI,
 
 ## Project structure
 
-```
+```text
 second-brain-template/
 ├── vault/                    # the template vault (what gets copied to your new vault)
 │   ├── HOME.md
