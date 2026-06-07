@@ -1,0 +1,317 @@
+{
+  "scripts/narrative_generator.py": {
+    "mtime": 1779924379.0418406,
+    "ast_hash": "aa0cece8f80d88ee670b5666a9503dbe",
+    "semantic_hash": ""
+  },
+  "setup.sh": {
+    "mtime": 1779924379.0418909,
+    "ast_hash": "13eb73164b18099a6c5b67e8dac20c6e",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/new-project.sh": {
+    "mtime": 1779924379.044363,
+    "ast_hash": "9662d76332be6bd708d6b1bc788ac91e",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1779924379.0398815,
+    "ast_hash": "39767111b3edceec45aee90557976adf",
+    "semantic_hash": ""
+  },
+  "docs/faq.md": {
+    "mtime": 1779924379.0400002,
+    "ast_hash": "35f871e4fd9df071e175abc692cbfbf6",
+    "semantic_hash": ""
+  },
+  "docs/getting-started.md": {
+    "mtime": 1779924379.0400922,
+    "ast_hash": "1390055a3fcb6ba76017645ac7772b94",
+    "semantic_hash": ""
+  },
+  "docs/mobile.md": {
+    "mtime": 1779924379.0402086,
+    "ast_hash": "ac680c599bee652e706fcf7c7bf72f1b",
+    "semantic_hash": ""
+  },
+  "docs/onboarding-prompt.md": {
+    "mtime": 1779924379.0403306,
+    "ast_hash": "3bb2980fbc2f74b7806d81185a058d61",
+    "semantic_hash": ""
+  },
+  "docs/philosophy.md": {
+    "mtime": 1779924379.0404127,
+    "ast_hash": "f0c38ab63369c888270e84305a284b4e",
+    "semantic_hash": ""
+  },
+  "docs/sync.md": {
+    "mtime": 1779924379.040488,
+    "ast_hash": "e0f96b9e00c25f27462c120fc714a489",
+    "semantic_hash": ""
+  },
+  "docs/tagging.md": {
+    "mtime": 1779924379.0405667,
+    "ast_hash": "bcdc73e6f7fd40ce9fd2fcef981c62cf",
+    "semantic_hash": ""
+  },
+  "integrations/claude-code/README.md": {
+    "mtime": 1779924379.040722,
+    "ast_hash": "ac68aa221ed6a8da7e432220113903d7",
+    "semantic_hash": ""
+  },
+  "integrations/claude-code/skills/braindump.md": {
+    "mtime": 1779924379.0408099,
+    "ast_hash": "de27cc67bb71bb7241016e7f65aa2ad9",
+    "semantic_hash": ""
+  },
+  "integrations/claude-code/skills/challenge.md": {
+    "mtime": 1779924379.0408866,
+    "ast_hash": "a63dcc60372fae00a588e90a7bd3778e",
+    "semantic_hash": ""
+  },
+  "integrations/claude-code/skills/emerge.md": {
+    "mtime": 1779924379.0409636,
+    "ast_hash": "3635c35a0dcd10b098cb69b4e1e8dd12",
+    "semantic_hash": ""
+  },
+  "integrations/claude-code/skills/onboard-vault.md": {
+    "mtime": 1779924379.0410442,
+    "ast_hash": "245a661de470ab8bc1914e5a9245cb1c",
+    "semantic_hash": ""
+  },
+  "integrations/claude-code/skills/weekly-review.md": {
+    "mtime": 1779924379.0411272,
+    "ast_hash": "9144d9cade0baa3edbb13aeb0dff67ef",
+    "semantic_hash": ""
+  },
+  "integrations/claude-projects/README.md": {
+    "mtime": 1779924379.0412416,
+    "ast_hash": "4322c9f3a8351e90baf4e0a0851d35cd",
+    "semantic_hash": ""
+  },
+  "integrations/continue-dev/README.md": {
+    "mtime": 1779924379.041314,
+    "ast_hash": "b6849638cfafada34cf799d8970324d2",
+    "semantic_hash": ""
+  },
+  "integrations/cursor/README.md": {
+    "mtime": 1779924379.0414577,
+    "ast_hash": "181d817f8b02bf51aeb5c13e7c718a0a",
+    "semantic_hash": ""
+  },
+  "integrations/generic/README.md": {
+    "mtime": 1779924379.04165,
+    "ast_hash": "0f16761ca83dce9d40dcb0c41cda3de6",
+    "semantic_hash": ""
+  },
+  "integrations/opencode/README.md": {
+    "mtime": 1779924379.0417254,
+    "ast_hash": "f5687c1b6e9e72053daedf39320be71a",
+    "semantic_hash": ""
+  },
+  "vault/HOME.md": {
+    "mtime": 1779924379.0419672,
+    "ast_hash": "ba67cc9fd8d761dea27a83cb86a42107",
+    "semantic_hash": ""
+  },
+  "vault/_templates/daily.md": {
+    "mtime": 1779924379.0420382,
+    "ast_hash": "17e0a3b12c17948d7c8fe87a3a117457",
+    "semantic_hash": ""
+  },
+  "vault/_templates/decision.md": {
+    "mtime": 1779924379.0420818,
+    "ast_hash": "49afe3ab5420c956f214586a77cb9d6e",
+    "semantic_hash": ""
+  },
+  "vault/_templates/idea.md": {
+    "mtime": 1779924379.0421257,
+    "ast_hash": "4108280d6aad91c38570c635f15a1243",
+    "semantic_hash": ""
+  },
+  "vault/_templates/person.md": {
+    "mtime": 1779924379.042174,
+    "ast_hash": "fb0393ccfc48a06e96eed122155ff10d",
+    "semantic_hash": ""
+  },
+  "vault/_templates/project.md": {
+    "mtime": 1779924379.0422192,
+    "ast_hash": "780e29c4b48e4812b36242fb37f443a8",
+    "semantic_hash": ""
+  },
+  "vault/_templates/reference.md": {
+    "mtime": 1779924379.0422654,
+    "ast_hash": "f3c2841b71f2360dc24cd1160f28d7e2",
+    "semantic_hash": ""
+  },
+  "vault/_templates/weekly.md": {
+    "mtime": 1779924379.0423381,
+    "ast_hash": "e96b98a7247982cb847a2af3418de16b",
+    "semantic_hash": ""
+  },
+  "vault/daily/README.md": {
+    "mtime": 1779924379.0424776,
+    "ast_hash": "ea82ac83fd163af38302640519d39ce4",
+    "semantic_hash": ""
+  },
+  "vault/inbox/README.md": {
+    "mtime": 1779924379.0425625,
+    "ast_hash": "bf7021ec16145fa2498fdb1923bfed5d",
+    "semantic_hash": ""
+  },
+  "vault/journal/README.md": {
+    "mtime": 1779924379.0427463,
+    "ast_hash": "1af7f917c2ac28772ddba10227b4c74e",
+    "semantic_hash": ""
+  },
+  "vault/people/README.md": {
+    "mtime": 1779924379.042834,
+    "ast_hash": "ca1cbd1c85f9db0d8be8ece09ad7c9b0",
+    "semantic_hash": ""
+  },
+  "vault/persona/README.md": {
+    "mtime": 1779924379.0429182,
+    "ast_hash": "f57d28bb8ac85dd206c5cb3c8b10a3cb",
+    "semantic_hash": ""
+  },
+  "vault/persona/career.md": {
+    "mtime": 1779924379.0429833,
+    "ast_hash": "058069931f606e6932c9ababd4115963",
+    "semantic_hash": ""
+  },
+  "vault/persona/collaboration.md": {
+    "mtime": 1779924379.043063,
+    "ast_hash": "c5375af1c7c5fc8694f0a04e7c2fadea",
+    "semantic_hash": ""
+  },
+  "vault/persona/self.md": {
+    "mtime": 1779924379.0431345,
+    "ast_hash": "64cddc458d91d01d911f249cf2d38775",
+    "semantic_hash": ""
+  },
+  "vault/persona/values.md": {
+    "mtime": 1779924379.0431926,
+    "ast_hash": "bed59cb99af2ac902a1950f293adea1c",
+    "semantic_hash": ""
+  },
+  "vault/projects/README.md": {
+    "mtime": 1779924379.0432775,
+    "ast_hash": "ee81f2913006c73578c55779f717e55b",
+    "semantic_hash": ""
+  },
+  "vault/references/README.md": {
+    "mtime": 1779924379.0433567,
+    "ast_hash": "b5ebfc7c11dd3b5d2d4df7fe0856a493",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/index.md": {
+    "mtime": 1779924379.0434768,
+    "ast_hash": "1d9e46f705ecf81bfef909219c6df5a1",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/knowledge/concepts.md": {
+    "mtime": 1779924379.0435658,
+    "ast_hash": "970148f34e4d43ddb8cda0ac75cba14b",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/knowledge/data-points.md": {
+    "mtime": 1779924379.0436287,
+    "ast_hash": "46c2015e63f4fe62da5d11e0bb1d074a",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/lenses/contrarian.md": {
+    "mtime": 1779924379.0437212,
+    "ast_hash": "811008a5b08174ceee20f36605588bfd",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/lenses/economic.md": {
+    "mtime": 1779924379.043783,
+    "ast_hash": "6a0c125b1c7b011b878e7e4cc1f34432",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/lenses/first-principles.md": {
+    "mtime": 1779924379.0438375,
+    "ast_hash": "d9cf8ab49641cde20eaecf9824608fa1",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/lenses/geopolitical.md": {
+    "mtime": 1779924379.0438962,
+    "ast_hash": "c72e363fbf3a5d14f22946835295a299",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/lenses/historical.md": {
+    "mtime": 1779924379.0439487,
+    "ast_hash": "81883e33475ec65cc60dabb30c474efe",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/lenses/technical.md": {
+    "mtime": 1779924379.044018,
+    "ast_hash": "bc1c72e48039cdb6de16ad6cb8b2a2ef",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/methodology/contradiction-protocol.md": {
+    "mtime": 1779924379.0441122,
+    "ast_hash": "04279d45c07b78f5923b545ab53e43db",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/methodology/research-frameworks.md": {
+    "mtime": 1779924379.0441732,
+    "ast_hash": "c84224199969bdb8e1ecee83baa0ac0d",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/methodology/source-evaluation.md": {
+    "mtime": 1779924379.044236,
+    "ast_hash": "51edd2cb6717c33597a542ff7ac412b1",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/methodology/synthesis-rules.md": {
+    "mtime": 1779924379.0442996,
+    "ast_hash": "0fe50a53dbddd9969a7ca9b0a172b183",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/projects/example-act-prep-market/deep-dive.md": {
+    "mtime": 1779924379.044553,
+    "ast_hash": "78b90722ece96a9e93c90b9377694c60",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/projects/example-act-prep-market/executive-summary.md": {
+    "mtime": 1779924379.0446126,
+    "ast_hash": "5f757ab5d4f04b22f1025e8813b7a600",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/projects/example-act-prep-market/index.md": {
+    "mtime": 1779924379.044673,
+    "ast_hash": "a0632a1974b499ef3d1d0a2a343602cb",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/projects/example-act-prep-market/key-players.md": {
+    "mtime": 1779924379.044733,
+    "ast_hash": "9dc4728e8b3b3e44e6a54011372b8a5e",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/projects/example-act-prep-market/open-questions.md": {
+    "mtime": 1779924379.044798,
+    "ast_hash": "72ce315e02776c49217c5bdf182597ef",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/projects/example-act-prep-market/testing-timeline.md": {
+    "mtime": 1779924379.0448868,
+    "ast_hash": "e663e4b65e20657cde15a48b89832e45",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/research-log.md": {
+    "mtime": 1779924379.0449443,
+    "ast_hash": "2cccaf867c7d24db3aff5e9c07d1323e",
+    "semantic_hash": ""
+  },
+  "vault/research-skill-graph/sources/source-template.md": {
+    "mtime": 1779924379.045034,
+    "ast_hash": "b8a40e7fa4cb37535e7567de049aad6b",
+    "semantic_hash": ""
+  },
+  "vault/weekly/README.md": {
+    "mtime": 1779924379.0451229,
+    "ast_hash": "dcd76a4df2b573324c50e72154bbf5ed",
+    "semantic_hash": ""
+  }
+}
